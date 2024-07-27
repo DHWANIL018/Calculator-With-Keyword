@@ -1,0 +1,88 @@
+/* Shree Ganeshay namah  */
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body{
+    background-color:beige;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   flex-direction: column;
+   height: 100vh;
+}
+.Mistack-class{
+    font-family: sans-serif;
+    margin-bottom: 30px;
+    color: red;
+}
+main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.box
+{
+    /* height: 75vh; */
+    height: 70vh;
+   
+    width: 30vw;  
+    /* width: 50vw;  */
+    background-color: white;
+    border-radius: 50px;
+    /* position: relative; */
+}
+.upper-section{
+    /* height: 18vh; */
+    height: 21%;
+    
+    width: 100%;
+    /* background-color: red; */
+    border-top-left-radius: 50px;
+    border-top-right-radius: 50px;
+    border-bottom: 4px solid rgba(0, 0, 0, 0.219);
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.lower-section{
+    height: 57vh;
+    width: 100%;
+    /* background-color: navy; */
+    border-bottom-left-radius: 50px;
+    border-bottom-right-radius: 50px;
+    /* padding: 15px 10px 15px; */
+
+}
+.pehla-container,.Second-container{
+    display: flex;
+    /* width: 25%; */
+    /* margin-top: 40px; */
+}
+.pehla-container button,.Second-container button{
+    width: 25%;
+    height: 11.2vh;
+    font-size: 1.8rem;
+    color:  black;
+    background-color: transparent;
+    border: none;
+    text-align: center
+};
+.my{
+    margin: 120px 0px 0px 500px;
+}
+
+.apna_input{
+    margin-top: 10px;
+    width: 90%;
+    outline: none;
+    border: none;
+    bottom: 10px;
+    text-align: right;
+    height: 50%;
+    font-size: 2.8rem;
+    
+}
+

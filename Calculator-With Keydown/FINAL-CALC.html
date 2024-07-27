@@ -1,0 +1,164 @@
+<!-- Shree Ganehshay namah  -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+        integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+
+    <h1 id="Mistack" class="Mistack-class"></h1>
+    <main>
+
+        <div class="box">
+
+            <div class="upper-section">
+                <input type="text" id="res" class="apna_input" placeholder="0">
+                <!-- <input type="text" style=" margin: 60px 0px 0px 40px;
+                    height: 80px;
+                    border: none;
+                    /* font-size: 1rem; */
+                    font-size: 40px; border: none; outline: none;" id="res"> -->
+
+            </div>
+            <div class="lower-section">
+                <div class="pehla-container">
+                    <button id="Clear">C</button>
+                    <button id="one_clear"><i class="fa-solid fa-delete-left"></i></button>
+                    <button id="calc" value="%">%</button>
+                    <button id="calc" value="/"><span style="font-weight: bold; font-size: 2.3rem;">/</span></button>
+                </div>
+
+                <div class="Second-container">
+                    <button id="calc" value="1">1</button>
+                    <button id="calc" value="2">2</button>
+                    <button id="calc" value="3">3</button>
+                    <button id="calc" value="*">*</button>
+                </div>
+
+                <div class="Second-container">
+                    <button id="calc" value="4">4</button>
+                    <button id="calc" value="5">5</button>
+                    <button id="calc" value="6">6</button>
+                    <button id="calc" value="+"><i class="fa-solid fa-plus"></i></button>
+                </div>
+
+                <div class="Second-container">
+                    <button id="calc" value="7">7</button>
+                    <button id="calc" value="8">8</button>
+                    <button id="calc" value="9">9</button>
+                    <button id="calc" value="-"><i class="fa-solid fa-minus"></i></button>
+                </div>
+
+                <div class="Second-container">
+                    <button id="calc" value="00">00</button>
+                    <button id="calc" value="0">0</button>
+                    <button id="calc" value=",">,</button>
+                    <button id="output" value="=">=</button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+
+
+    <script>
+
+
+        let Mistack = document.querySelector('#Mistack')
+        let btn = document.querySelectorAll('#calc')
+        let res = document.querySelector('#res')
+        let output = document.querySelector('#output')
+        let Clear = document.querySelector('#Clear')
+
+
+
+
+
+        btn.forEach(button => {
+            button.addEventListener('click', function (event) {
+                val = button.getAttribute('value')
+                res.value = res.value + val
+                // let value = event.target.value
+            })
+        });
+
+        console.log(output.getAttribute('value'));
+
+        output.addEventListener('click', () => {
+
+            // res.value = eval(res.value)
+            try {
+                res.value = eval(res.value)
+            } catch (error) {
+                console.log(error);
+                Mistack.innerHTML = "Are Bhai Tum Kehna Kya Chate ho"
+            }
+
+
+            if (res.value == "undefined") {
+                res.value = ""
+            }
+        })
+
+        Clear.addEventListener('click', () => {
+            Mistack.innerHTML = ""
+            res.value = ""
+        })
+
+        one_clear.addEventListener('click', () => {
+            res.value = res.value.slice(0, -1)
+            Mistack.innerHTML = ""
+        })
+        
+
+            /// Key Down
+
+
+        document.addEventListener('keydown', (e) => {
+            console.log(e.key, e.keyCode)
+            if (e.keyCode === 67) {
+                res.value = ""
+            }
+            else if(e.keyCode === 13){
+             try {
+                res.value = eval(res.value)
+            } catch (error) {
+                console.log(error);
+                Mistack.innerHTML = "Are Bhai Tum Kehna Kya Chate ho"
+            }
+
+
+            if (res.value == "undefined") {
+                res.value = ""
+            }
+            }
+            else if(e.keyCode === 8){
+             res.value = res.value.slice(0, -1)
+            Mistack.innerHTML = ""
+            }
+            else if (e.keyCode >= 48 && e.keyCode <= 57) {
+                res.value = res.value + String.fromCharCode(e.keyCode);
+            }
+            else if (e.keyCode ===187){
+                res.value = res.value + "+"
+            }
+             else if (e.keyCode ===189){
+                res.value = res.value + "-"
+            }
+             else if (e.keyCode ===191){
+                res.value = res.value + "/"
+            }
+
+        })
+    </script>
+</body>
+
+</html>
